@@ -116,6 +116,6 @@ describe("Notes application increments number of notes of an author as notes are
 	
 	it("view all Authors note in the application", function() {
 		
-        assert( noteApplication.viewAllNotes() === "No created notes");
+        assert( noteApplication.viewAllAuthorNotes() === "No created notes");
     })
 })
