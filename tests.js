@@ -95,7 +95,7 @@ describe("Notes application increments number of notes of an author as notes are
 		note.create("This is my second note");
 		note.create("This is my third note");
         noteApplication.addAuthorNote(note);
-        assert(Object.keys(noteApplication.authornote).length == 1);
+        assert(Object.keys(noteApplication.authornote).length === 1);
     })
 	
 	it("get note of a particular author by supplying author name(case sensitive) and note id", function() {
@@ -109,7 +109,7 @@ describe("Notes application increments number of notes of an author as notes are
 		note1.create("This is my second note");
 		note1.create("This is my third note");
 		noteApplication.addAuthorNotes(note);
-		noteApplication.addAuthorNote(note1);
+		noteApplication.addAuthorNotes(note1);
         assert(noteApplication.getNote(note,0) === "This is my first note");
 		assert(noteApplication.getNote(note,4) === false);
     })
