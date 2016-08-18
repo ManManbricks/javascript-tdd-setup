@@ -49,7 +49,7 @@ describe("Note creation works properly", function() {
 	
     it("Delete an Author's note by supplying as parameter the note id", function() {
 		
-		newNote = new Note( "David Beck" );
+		var newNote = new Note( "David Beck" );
 		newNote.create("First Note");
 		newNote.create("second Note");
 		newNote.create("third Note");
