@@ -53,11 +53,11 @@ describe("Note creation works properly", function() {
 		newNote.create("First Note");
 		newNote.create("second Note");
 		newNote.create("third Note");
-		newNote.delete(0)
+		newNote.deleteNote(0)
 		assert( newNote.notes.length === 2 );
-		newNote.delete(0)
+		newNote.deleteNote(0)
 		assert( newNote.notes.length === 1 );
-		assert( newNote.delete(5.6) === "undefined" )
+		assert( newNote.deleteNote(5.6) === "undefined" )
 		
 	})
 	
