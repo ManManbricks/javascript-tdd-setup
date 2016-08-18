@@ -7,24 +7,25 @@ var NotesApplication = require('./lib/notesapplication.js');
 var Note = require('./lib/notes.js');
 
 describe("Note creation works properly", function() {
+	var note;
 	
 	beforeEach( function(){
-		
 		note = new Note("ManMan bricks")
-		note.create("This is my first note")
-		note.create("This is my second note")
-		note.create("This is my third note")
-	})
-    it("assigns author based on the parameter supplied in the constructor", function() {
-        
-        assert(note.author == "ManMan bricks")
-    })
-	
-	/*it("create a new note for an author based on the note content passed to the create function for the current author", 
+		
+	});
+    
+	it("create a new note for an author based on the note content passed to the create function for the current author", 
 	function() {
 		
-		assert( note.get(0) == "This is my first note" )
-	})
+		note.create("This is my first note")
+		note.create("This is my second note")
+		note.create("This is my third note")		
+		assert(note.notes.length === 3 )		
+	});
+	
+	it("assigns author based on the parameter supplied in the constructor", function() {
+        assert(note.author == "ManMan bricks")
+    });
 	
 	it("list all notes for an author using listNotes function", function() {
 		
@@ -68,10 +69,12 @@ describe("Note creation works properly", function() {
 		assert( note.get(0) === newNote );
 		assert( note.edit(5,5) === "undefined" );
 		assert( note.edit("5","new note") === "undefined" );		
-	})*/
+	}) 
 })
 
 describe("Notes application increments number of notes of an author as notes are added", function() {
+	
+	var noteApplication;
 	
 	beforeEach( function(){		
 	
@@ -85,5 +88,26 @@ describe("Notes application increments number of notes of an author as notes are
 		note.create("This is my third note")
         noteApplication.addAuthorNote(note)
         assert(noteApplication.authornote.length == 1)
+    })
+	
+	it("get note of a particular author by supplying author name(case sensitive) and note id", function() {
+		note = new Note("David Beckham")
+		note.create("This is my first note")
+		note.create("This is my second note")
+		note.create("This is my third note")
+		
+		note1 = new Note("David Beckham")
+		note1.create("This is my first note")
+		note1.create("This is my second note")
+		note1.create("This is my third note")
+		noteApplication.addAuthorNotes(note)
+		noteApplication.addAuthorNote(note1);
+        assert(noteApplication.getNote(note,0) === "This is my first note")
+		assert(noteApplication.getNote(note,4) === "undefined")
+    })
+	
+	it("view all Authors note in the application", function() {
+		
+        assert( noteApplication.viewAllNotes() == "undefined")
     })
 })
