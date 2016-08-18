@@ -73,7 +73,7 @@ describe("Note creation works properly", function() {
 		note.create("This is my third note");			
 		assert( note.edit(5,"new note") === false );
 		var newNote = "Change First Note";
-		console("Testing",note.edit(0, newNote));
+		console.log("Testing",note.edit(0, newNote));
 		assert( note.get(0) === newNote );
 		assert( note.edit(5,5) === false );
 		assert( note.edit("5","new note") === false );		
