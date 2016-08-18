@@ -94,7 +94,7 @@ describe("Notes application increments number of notes of an author as notes are
 		note.create("This is my first note");
 		note.create("This is my second note");
 		note.create("This is my third note");
-        noteApplication.addAuthorNote(note);
+        noteApplication.addAuthorNotes(note);
         assert(Object.keys(noteApplication.authornote).length === 1);
     })
 	
