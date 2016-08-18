@@ -29,7 +29,7 @@ describe("Note creation works properly", function() {
 	
 	it("list all notes for an author using listNotes function", function() {
 		
-		console.log("Testing:", note);
+		console.log("Testing:", note.listNotes());
 		assert( note.listNotes() === true )
 	})
 		
