@@ -39,7 +39,7 @@ describe("Note creation works properly", function() {
 		note.create("This is my first note")
 		note.create("This is my second note")
 		note.create("This is my third note")	
-		console.log( "Testing" , note.get("him"));
+		//console.log( "Testing" , note.get("him"));
 		assert( note.get(1) === "This is my second note" );
 		assert( note.get(4) === false );
 		asert( note.get("him") === false );
