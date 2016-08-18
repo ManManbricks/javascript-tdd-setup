@@ -30,7 +30,7 @@ describe("Note creation works properly", function() {
 	it("list all notes for an author using listNotes function", function() {
 		
 		
-		assert( note.listNotes() )
+		assert( note.listNotes() === true )
 	})
 		
 	it("Get an author's note by supplying the note id as parameter to get function", function() {
