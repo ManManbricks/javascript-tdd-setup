@@ -30,14 +30,14 @@ describe("Note creation works properly", function() {
 	it("list all notes for an author using listNotes function", function() {
 		
 		list = note.listNotes();
-		assert( list == "undefined" )
+		assert( typeof(list) == "undefined" )
 	})
 		
 	it("Get an author's note by supplying the note id as parameter to get function", function() {
 			
 		assert( note.get(1) === "This is my second note" );
-		assert( note.get(4) === "undefined" );
-		asert( note.get("him") === "undefined" );
+		assert( typeof(note.get(4)) === "undefined" );
+		asert( typeof(note.get("him")) === "undefined" );
 	})
 	
     it("search the all notes of an Author by supplying the search term as parameter to the search function", function() {
