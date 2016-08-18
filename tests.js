@@ -20,7 +20,7 @@ describe("Note creation works properly", function() {
         assert(note.author == "ManMan bricks")
     })
 	
-	it("create a new note for an author based on the note content passed to the create function for the current author", 
+	/*it("create a new note for an author based on the note content passed to the create function for the current author", 
 	function() {
 		
 		assert( note.get(0) == "This is my first note" )
@@ -68,7 +68,7 @@ describe("Note creation works properly", function() {
 		assert( note.get(0) === newNote );
 		assert( note.edit(5,5) === "undefined" );
 		assert( note.edit("5","new note") === "undefined" );		
-	})
+	})*/
 })
 
 describe("Notes application increments number of notes of an author as notes are added", function() {
